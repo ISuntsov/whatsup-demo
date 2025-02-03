@@ -1,30 +1,36 @@
-# React + Vite Local Development Setup
+# WhatsApp Chat with GREEN-API
 
-## Table of Contents
+Этот проект представляет собой простой чат для отправки и получения сообщений через WhatsApp с использованием GREEN-API.
 
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Project](#running-the-project)
-- [Testing](#testing)
-- [Contributing](#contributing)
 
-## Prerequisites
+## Требования
 
-- Node.js
-- npm (comes bundled with Node.js)
-- Git
+- Node.js (версия 16 или выше)
+- npm (поставляется с Node.js)
 
-## Installation
 
-1. Clone the repository:
+## Установка
+
+1. Клонируйте репозиторий:
+
 git clone https://github.com/ISuntsov/whatsup-demo.git
 
-2. Install dependencies:
+2. Установите зависимости:
+
 npm install
 
-## Running the Project
 
-1. Start the development server:
+## Запуск проекта:
+
 npm run dev
 
-2. Open the browser on http://localhost:5173/
+в браузере перейти на: http://localhost:5173/
+
+
+## Использование
+
+Введите ваши учетные данные GREEN-API (ID Instance и API Token Instance).
+
+Введите номер телефона получателя (например, 79000000000 для тестового номера).
+
+Начните обмен сообщениями.

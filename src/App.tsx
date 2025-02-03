@@ -5,8 +5,10 @@ import Chat from "./components/Chat";
 import chatStore from "./stores/ChatStore";
 
 const App: FC = observer(() => {
-  const [idInstance, setIdInstance] = useState("");
-  const [apiTokenInstance, setApiTokenInstance] = useState("");
+  const [idInstance, setIdInstance] = useState("1101000001");
+  const [apiTokenInstance, setApiTokenInstance] = useState(
+    "d75b3a66374942c5b3c019c698abc2067e151558acbd412345"
+  );
   const [recipient, setRecipient] = useState("");
 
   const handleStartChat = () => {

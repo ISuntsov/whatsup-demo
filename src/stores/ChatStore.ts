@@ -20,7 +20,10 @@ class ChatStore {
   }
 
   addMessage(message: IMessage) {
-    this.messages.push(message);
+    this.messages.push({
+      ...message,
+      timestamp: new Date().toISOString(),
+    });
   }
 
   getURL(method: methodURL) {
@@ -33,7 +36,7 @@ class ChatStore {
       chatHistory: `getChatHistory`,
     };
 
-    return `https://api.green-api.com/waInstance${idInstance}/${methods[method]}/${apiTokenInstance}`;
+    return `https://1103.api.green-api.com/waInstance${idInstance}/${methods[method]}/${apiTokenInstance}`;
   }
 
   async fetchMessages() {
@@ -47,7 +50,8 @@ class ChatStore {
         const text =
           notification.body.messageData.textMessageData?.textMessage ||
           notification.body.messageData.extendedTextMessageData.text;
-        this.addMessage({ text, sender: "other", read: false });
+        const timestamp = notification.body.timestamp;
+        this.addMessage({ text, sender: "other", read: false, timestamp });
         await axios.delete(`${deleteUrl}/${notification.receiptId}`);
       }
     } catch (error) {

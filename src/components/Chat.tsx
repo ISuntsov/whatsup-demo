@@ -31,7 +31,12 @@ const Chat: FC<ChatProps> = observer(({ onReset }) => {
     if (newMessage.trim()) {
       setOptimisticMessages((prev) => [
         ...prev,
-        { text: newMessage, sender: "me", read: true },
+        {
+          text: newMessage,
+          sender: "me",
+          read: true,
+          timestamp: new Date().toISOString(),
+        },
       ]);
 
       try {
@@ -85,6 +90,7 @@ const Chat: FC<ChatProps> = observer(({ onReset }) => {
               text={msg.text}
               sender={msg.sender}
               read={msg.read}
+              timestamp={msg.timestamp}
             />
           ))}
         </List>

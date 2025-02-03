@@ -7,6 +7,7 @@ export interface IMessage {
   text: string;
   sender: "me" | "other";
   read?: boolean;
+  timestamp?: string;
 }
 
 export interface ChatProps {
